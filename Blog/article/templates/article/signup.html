@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    SignUp | Page
+{% endblock title %}
+
+{% block content %}
+<main class="p-5 bg-blue-500 w-full h-screen grid grid-cols-1 place-item-center items-center ">
+    <form action="#" method="post" class="p-5 max-w-lg grid grid-cols-1 border-2 rounded ml-auto mr-auto    ">
+        {% csrf_token %}
+        <div class="flex flex-col">
+            <label for="username">Userame</label>
+            <input class="rounded-lg " type="text" name="username" id="username" placeholder="Enter Username" required>
+        </div>
+
+        <div class="flex flex-col">
+            <label for="email">Your Email</label>
+            <input class="rounded-lg" type="email" name="email" id="email" placeholder="Enter Your Email" required>
+        </div>
+        <div class="flex flex-col">
+            <label for="pass1">Your New Password</label>
+            <input class="rounded-lg" type="password" name="pass1" id="pass1" placeholder="At least 8 Characters" required>
+        </div>
+        <div class="flex flex-col">
+            <label for="pass2">Confirm Password</label>
+            <input class="rounded-lg" type="password" name="pass2" id="pass2" placeholder="At least 8 Characters" required>
+        </div>
+        
+        <input class="bg-orange-500 w-full mt-4 rounded-md py-3 px-4" type="submit" id="submit" value="Create Account">
+        
+        <p class="mt-5 text-center">Already have an account ? <a class="ml-3" href="{% url 'login' %}">Log In</a></p>
+    </form>
+</main>
+
+{% endblock content %}

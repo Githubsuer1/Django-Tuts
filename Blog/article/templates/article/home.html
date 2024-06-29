@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home | Page
+{% endblock title %}
+
+
+
+
+{% block content %}
+
+
+<div class="bg-blue-500 w-full h-screen">
+    {% if user.is_authenticated %}
+    <h1 class="font-bold text-center py-5 bg-gray-500">Hello {{user.username | upper}}, Welcome to MegaBlog</h1>
+    {% endif %}
+</div>
+
+
+{% endblock content %}
+
+

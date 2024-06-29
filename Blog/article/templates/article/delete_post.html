@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Delete | Page
+{% endblock title %}
+
+{% block content %}
+<div class=" bg-blue-500 w-full h-screen ">
+
+    <div class="ml-auto mr-auto h-screen flex flex-col border-2 rounded p-5">
+            <a class="bg-orange-500 h-8 text-center font-bold rounded" href="{% url "view_details" delete_obj.id %}">Back</a>
+            <a class="bg-red-500 mt-3 rounded p-2 text-center font-bold" href="{% url "delete" delete_obj.id %}">Are you sure you want to delete the article ?</a>
+    </div>
+
+</div>
+
+
+{% endblock content %}

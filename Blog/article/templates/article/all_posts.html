@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home | Page
+{% endblock title %}
+
+{% block content %}
+
+
+<div class="p-5 bg-blue-500 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-2">
+    
+{% for article in articles %}
+
+    <div class="w-full flex flex-col justify-between md:w-auto border-2 p-7 rounded-md mt-5 relative">
+        <h1 class="text-xs text-white font-bold">By {{article.author | upper}} {{article.date_created}}</h1>
+        <p class="text-white text-lg">{{article.title}}</p>
+        <img class="rounded-md mb-1 transition duration-700 ease-in-out transform hover:scale-105" 
+        src="{{article.image.url}}" 
+        alt="">  
+        <a class="bg-orange-500 h-8 text-center font-bold rounded" href="{% url "view_details" article.id %}">Full Details</a>
+    </div>
+
+{% endfor %}
+
+</div>
+
+
+{% endblock content %}
+
+

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add | Page
+{% endblock title %}
+
+{% block content %}
+<div class="bg-blue-500 w-full h-screen flex justify-center">
+    <div class="max-w-auto border-2 rounded p-5 max-h-auto">
+        <form  method="POST" enctype="multipart/form-data"  class="grid grid-cols-1 mt-5">
+            {% csrf_token %}
+
+            <h1 class="bg-green-500 text-center p-3 text-white rounded font-bold">Add Blog</h1>
+            {{ form.title }}
+            {{ form.image }}
+
+            <input type="submit" value"upload" class="bg-orange-500 p-3 w-full rounded font-bold mt-5">
+        </form>
+    </div>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    View | Page
+{% endblock title %}
+
+{% block content %}
+<div class="grid grid-cols-1 bg-blue-500 w-full lg:w-2xl md:w-xl sm:w-full h-screen ">
+
+    <div class="ml-auto mr-auto h-screen flex flex-col justify-between border-2 rounded p-5">
+
+
+            <h2 class="text-center p-3">{{full_detail.title}}</h2>
+            
+            <img class="rounded object-fill h-3/5 transition duration-700 ease-in-out transform hover:scale-105"  src="{{full_detail.image.url}}" alt="">
+            
+            <a class="bg-orange-500 mt-3 rounded p-2 text-center" href="{% url "all_posts" %}">Back</a>
+
+            {% if full_detail.author == request.user  %}
+
+            <a class="bg-orange-500 mt-3 rounded p-2 text-center" href="{%url "edit_article" full_detail.id %}">Edit</a>
+            <a class="bg-orange-500 mt-3 rounded p-2 text-center" href="{% url "delete_articles" full_detail.id %}">Delete</a>
+
+            {% endif %}
+
+    </div>
+
+</div>
+
+
+{% endblock content %}
